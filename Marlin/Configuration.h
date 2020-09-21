@@ -506,9 +506,9 @@
   //#define DEFAULT_Kd 440
 
   //FB5
-  #define DEFAULT_Kp 17.04
-  #define DEFAULT_Ki 1.31
-  #define DEFAULT_Kd 55.34
+  #define DEFAULT_Kp 19.0
+  #define DEFAULT_Ki 1.34
+  #define DEFAULT_Kd 67.5
 
 #endif // PIDTEMP
 
@@ -1788,7 +1788,7 @@ EEPROM_W25Q
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-#define DISPLAY_CHARSET_HD44780 JAPANESE
+#define DISPLAY_CHARSET_HD44780 CYRILLIC
 
 /**
  * Info Screen Style (0:Classic, 1:Průša)
@@ -2279,7 +2279,7 @@ EEPROM_W25Q
 //
 //#define TFT_320x240
 //#define TFT_320x240_SPI
-#define TFT_480x320
+//#define TFT_480x320
 //#define TFT_480x320_SPI
 
 //
@@ -2299,7 +2299,7 @@ EEPROM_W25Q
 // FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, REXYZ A1, etc.)
 // Upscaled 128x64 Marlin UI
 //
-//#define FSMC_GRAPHICAL_TFT
+#define FSMC_GRAPHICAL_TFT
 
 //
 // TFT LVGL UI
