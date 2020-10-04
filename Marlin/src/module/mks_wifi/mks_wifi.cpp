@@ -1,7 +1,6 @@
 #include "mks_wifi.h"
 #ifdef MKS_WIFI
 
-
 #include "../../lcd/ultralcd.h"
 #include "mks_wifi_sd.h"
 #include "mks_test_sdio.h"
@@ -135,6 +134,7 @@ uint8_t mks_wifi_input(uint8_t data){
 
 	//Не отдавать данные в очередь команд, если идет печать
 	if (CardReader::isPrinting()){
+		DEBUG("No input while printing");
 		return 1;
 	}	
 	
@@ -143,6 +143,8 @@ uint8_t mks_wifi_input(uint8_t data){
 		packet_start_flag=1;
 		packet_index=0;
 		memset((uint8_t*)mks_in_buffer,0,MKS_IN_BUFF_SIZE);
+	}else if(!packet_start_flag){
+		DEBUG("Byte not in packet %0X %c",data,data);
 	}
 
 	if(packet_start_flag){
