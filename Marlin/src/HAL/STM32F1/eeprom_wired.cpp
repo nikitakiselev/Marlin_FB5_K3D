@@ -17,16 +17,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+
+/**
+ * HAL PersistentStore for STM32F1
+ */
+
 #ifdef __STM32F1__
 
 #include "../../inc/MarlinConfig.h"
 
 #if USE_WIRED_EEPROM
-
-/**
- * PersistentStore for Arduino-style EEPROM interface
- * with simple implementations supplied by Marlin.
- */
 
 #include "../shared/eeprom_if.h"
 #include "../shared/eeprom_api.h"
@@ -36,7 +36,12 @@
 #endif
 size_t PersistentStore::capacity()    { return MARLIN_EEPROM_SIZE; }
 
-bool PersistentStore::access_finish() { return true; }
+bool PersistentStore::access_finish() { 
+  #if ENABLED(EEPROM_W25Q)
+  eeprom_hw_deinit();
+  #endif
+  return true; 
+  }
 
 bool PersistentStore::access_start() {
   eeprom_init();
