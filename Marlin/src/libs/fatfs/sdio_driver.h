@@ -1,7 +1,9 @@
 #ifndef SDIO_DRIVER_H
 #define SDIO_DRIVER_H
 
-#include "../../module/mks_wifi/small_cmsis.h"
+#include "../../module/mks_wifi/mks_wifi.h"
+
+//#include "../../module/mks_wifi/small_cmsis.h"
 #ifdef MKS_WIFI
 
 // SD card description

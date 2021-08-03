@@ -2,13 +2,13 @@
 #define MKS_WIFI_SD_H
 #include "mks_wifi.h"
 #include "../../sd/cardreader.h"
-#include "small_cmsis.h"
-
 #include "../shared_mem/shared_mem.h"
 
 #ifdef MKS_WIFI
 
-#define DMA_TIMEOUT 0xFffffff
+#define SHOW_PROGRESS
+
+#define DMA_TIMEOUT 0x0ffffff
 #define ESP_PACKET_SIZE     1024
 
 //Под буфер для DMA два последних КБ из буфера
