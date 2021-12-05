@@ -3700,6 +3700,7 @@
 
   #define USER_DESC_1 "Home & UBL Info"
   #define USER_GCODE_1 "G28\nG29 W"
+#endif
 
 // Custom Menu: Main Menu
 #define CUSTOM_MENU_MAIN
